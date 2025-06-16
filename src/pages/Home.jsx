@@ -19,7 +19,6 @@ function Home() {
       {" "}
       <div className="font-sans ">
         <HeroSection />
-        <StatsCounter /> {/* Responsive Section */}
         <TireCarousel />
   <div className="relative w-full">
   {/* Background Image */}
