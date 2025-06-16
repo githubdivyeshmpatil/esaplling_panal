@@ -19,7 +19,7 @@ const StatsCounter = () => {
           <CountUp
             key={trigger}
             start={0}
-            end={18}
+            end={5}
             duration={3}
             delay={0}
           />{" "}

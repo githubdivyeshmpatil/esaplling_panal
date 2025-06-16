@@ -5,7 +5,6 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger animation after mount
     setTimeout(() => setIsVisible(true), 100);
   }, []);
 
@@ -15,9 +14,9 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="w-full h-full bg-black/60 flex items-center justify-center px-4">
-        <div className="text-center text-white max-w-2xl">
+        <div className="text-center text-white max-w-3xl px-2 sm:px-4 md:px-6">
           <h1
-            className={`text-4xl md:text-6xl font-Inter font-bold mb-4 transform transition-all duration-1000 ease-out ${
+            className={`whitespace-nowrap text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 ease-out transform font-Inter ${
               isVisible ? "scale-100 opacity-100" : "scale-75 opacity-0"
             }`}
           >

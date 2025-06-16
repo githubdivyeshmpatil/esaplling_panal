@@ -51,7 +51,7 @@ export default function Navbar() {
         {/* Left: Logo and Nav Items */}
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center mt-[-12px]">
-            <img src={logo} alt="Logo" className="h-16 w-16 object-contain" />
+            <img src={logo} alt="Logo" className="h-22 w-22 object-contain" />
           </Link>
 
           {/* Desktop Nav */}
