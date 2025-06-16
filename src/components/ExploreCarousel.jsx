@@ -8,8 +8,8 @@ import product5 from "../assets/images/services5.jpg";
 // Product data
 const originalProducts = [
   { name: "Board Room", desc: "Touch-enabled collaboration", image: product1 },
-  { name: "Virtual Conference", desc: "Streamlined entertainment", image: product2 },
-  { name: "Meeting Room", desc: "Large format visual displays", image: product3 },
+  { name: "Virtual Conference", desc: "Streamlined monitoring", image: product2 },
+  { name: "Meeting Room", desc: "Large format visual displays and News Room", image: product3 },
   { name: "Multi Split", desc: "High brightness displays", image: product4 },
   { name: "Live - Broadcast", desc: "Efficient visualization", image: product5 },
 ];

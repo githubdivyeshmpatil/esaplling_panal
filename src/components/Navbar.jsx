@@ -46,14 +46,13 @@ export default function Navbar() {
   };
 
   return (
-<nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-md`}>
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+ <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-md p-4">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24">
         {/* Left: Logo and Nav Items */}
         <div className="flex items-center space-x-8">
-          <Link to="/" className="flex items-center mt-[-12px]">
-            <img src={logo} alt="Logo" className="h-22 w-22 object-contain" />
+          <Link to="/" className="flex items-center p-2">
+            <img src={logo} alt="Logo" className="h-28 w-28 object-contain" />
           </Link>
-
           {/* Desktop Nav */}
           <ul className="hidden md:flex items-center space-x-6 text-sm font-medium font-robo">
             {navItems.map((item, index) => (
@@ -71,7 +70,7 @@ export default function Navbar() {
                     {activeDropdown === index && (
                       <div
                         onMouseLeave={handleMouseLeave}
-                        className="fixed left-0 w-full bg-[#f8f8f8]  shadow-lg border-t border-gray-200 transition-all duration-300  mt-5 z-40"
+                        className="fixed left-0 w-full bg-[#f8f8f8]  shadow-lg border-t border-gray-200 transition-all duration-300  mt-7 z-40"
                       >
                         <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-4 gap-10 text-left max-h-[600px] overflow-y-auto">
                           {item.dropdown.type === "product" && (

@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <h2 className="text-3xl font-bold leading-tight">
               Stay connected with <br className="hidden md:block" />
-              Esaplling updates
+              ESAPLLING updates
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
