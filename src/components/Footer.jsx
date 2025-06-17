@@ -51,7 +51,7 @@ export default function Footer() {
           <div>
             <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-3">EXPLORE</h3>
             <ul className="space-y-2 text-sm sm:text-base md:text-lg">
-              <li>Why Nureva audio</li>
+              <li>Why Esaplling Panal</li>
               <li>Products</li>
               <li>Technology</li>
               <li>Solutions</li>
@@ -115,12 +115,12 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div className="text-xs space-x-4 text-gray-400 mb-4 md:mb-0 text-sm sm:text-base md:text-lg">
+          <div className=" space-x-4 text-gray-400 mb-4 md:mb-0 text-sm sm:text-base md:text-lg">
             <a href="#">Privacy Policy</a>
             <a href="#">Security</a>
             <a href="#">Legal</a>
             <a href="#">Trademarks</a>
-            <span>Copyright © 2025 Esaplling pvt ltd. All rights reserved.</span>
+            <span>Copyright © 2025 ESAPLLING pvt ltd. All rights reserved.</span>
           </div>
 
           {/* Logo */}

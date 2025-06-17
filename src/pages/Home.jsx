@@ -12,6 +12,7 @@ import TireCarousel from "../components/TireCarousel";
 import Sound from "../assets/images/sound.png";
 import Soundname from "../components/Soundname";
 import TextImageSection from "../components/TextImageSection";
+import bgImagesound from '../assets/images/sound1.png'
 
 function Home() {
   return (
@@ -127,6 +128,26 @@ Bring live meeting to the next level{" "}
             </div>
           </div>
         </div>
+{/* ----------------------------------sound------------------------------------------ */}
+        <section className="bg-white py-12 px-6">
+
+    <section className="flex flex-col md:flex-row items-center justify-between px-4 md:px-12 py-8   ">
+          {/* Left Column: Text */}
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-blue-900  leading-tight font-bold mb-4">Evolve – Generation – I (Camera with Surround Bar) </h2>
+           
+          </div>
+    
+          {/* Right Column: Image */}
+          <div className="w-full md:w-1/2">
+            <img
+              src={bgImagesound}
+              alt="Example"
+              className="w-full h-auto "
+            />
+          </div>
+        </section>
+</section>
         <Soundname />
         <Footer />
       </div>

@@ -6,27 +6,28 @@ const Soundname = () => {
     <section className="flex flex-col md:flex-row items-center md:items-start gap-8 px-4 py-8 md:px-12 bg-white">
       
       {/* Left Side Image with Slow 360 Spin */}
-      <div className="w-full md:w-1/2 flex justify-center items-center">
-        <div className="relative w-full max-w-sm animate-spin-slow">
+       <div className="w-full md:w-1/2 flex justify-center items-center">
+        <div className="relative w-full max-w-lg animate-spin-slow"> {/* Increased from max-w-sm to max-w-lg */}
           <img
             src={soundImage}
             alt="Soundname – Evolve Gen II"
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-full h-auto "
             style={{ transformStyle: "preserve-3d" }}
           />
         </div>
       </div>
 
+
       {/* Right Side Description */}
       <div className="w-full md:w-1/2 text-gray-800">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-blue-900">
           Evolve – Generation – II{" "}
           <span className="block text-base font-medium text-gray-600">
             (Camera with live 360 Surround System)
           </span>
         </h2>
 
-        <ul className="list-disc list-inside space-y-3 text-sm sm:text-base leading-relaxed">
+        <ul className="list-disc list-inside space-y-3  leading-relaxed text-sm sm:text-base md:text-lg text-justify">
           <li>
             The primary justification for finding Conference indoors is the
             Evolve – Generation – II, which allows you to spend more time
