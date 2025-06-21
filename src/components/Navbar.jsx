@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo-re.png";
 import pro from "../assets/images/digital_segnage.png";
 import pro1 from "../assets/images/standee1.png";
@@ -14,6 +14,8 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
@@ -21,7 +23,7 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Products", dropdown: { type: "product" } },
+    { name: "Products", link: "/productspage", dropdown: { type: "product" } },
     { name: "Solutions", dropdown: { type: "solutions" } },
     { name: "Software & Services", link: "/software" },
     { name: "Resources", dropdown: { type: "resources" } },
@@ -48,10 +50,17 @@ export default function Navbar() {
               <li key={index} className="relative">
                 {item.dropdown ? (
                   <>
-                    <button
-                      onClick={() =>
-                        setActiveDropdown(activeDropdown === index ? null : index)
-                      }
+                    <Link
+                      to={item.link || "#"}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (activeDropdown === index) {
+                          setActiveDropdown(null);
+                        } else {
+                          setActiveDropdown(index);
+                          if (item.link) navigate(item.link);
+                        }
+                      }}
                       className="hover:text-gray-500 py-2 flex items-center gap-1 focus:outline-none"
                     >
                       {item.name}
@@ -60,32 +69,52 @@ export default function Navbar() {
                       ) : (
                         <ChevronDown size={16} />
                       )}
-                    </button>
+                    </Link>
+
                     {activeDropdown === index && (
                       <div
                         onMouseLeave={handleMouseLeave}
                         className="fixed left-0 w-full bg-[#f8f8f8] shadow-lg border-t border-gray-200 mt-8 z-40 transition-all duration-300"
                       >
                         <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-h-[600px] overflow-y-auto">
-                          {/* Products Dropdown */}
                           {item.dropdown.type === "product" && (
                             <>
                               <div className="space-y-5">
-                                <h4 className="text-base font-semibold mb-2">PRO SERIES</h4>
-                                <Link to="/products/hdl410" className="block hover:underline space-y-1">
+                                <h4 className="text-base font-semibold mb-2">
+                                  PRO SERIES
+                                </h4>
+                                <Link
+                                  to="/products/hdl410"
+                                  className="block hover:underline space-y-1"
+                                >
                                   <div className="w-14">
-                                    <img src={pro} alt="HDL410" className="w-full h-auto rounded" />
+                                    <img
+                                      src={pro}
+                                      alt="HDL410"
+                                      className="w-full h-auto rounded"
+                                    />
                                   </div>
-                                  <p className="font-bold text-sm">Digital Signage</p>
+                                  <p className="font-bold text-sm">
+                                    Digital Signage
+                                  </p>
                                   <p className="text-xs text-gray-600">
                                     Pro AV performance for extra-large rooms
                                   </p>
                                 </Link>
-                                <Link to="/products/hdl310" className="block hover:underline space-y-1">
+                                <Link
+                                  to="/products/hdl310"
+                                  className="block hover:underline space-y-1"
+                                >
                                   <div className="w-14">
-                                    <img src={pro1} alt="HDL310" className="w-full h-auto rounded" />
+                                    <img
+                                      src={pro1}
+                                      alt="HDL310"
+                                      className="w-full h-auto rounded"
+                                    />
                                   </div>
-                                  <p className="font-bold text-sm">Digital Standee</p>
+                                  <p className="font-bold text-sm">
+                                    Digital Standee
+                                  </p>
                                   <p className="text-xs text-gray-600">
                                     Pro AV performance for large rooms
                                   </p>
@@ -93,33 +122,82 @@ export default function Navbar() {
                               </div>
 
                               <div className="space-y-5">
-                                <h4 className="text-base font-semibold mb-2">HDL SERIES</h4>
-                                <Link to="/products/hdl300" className="block hover:underline space-y-1">
+                                <h4 className="text-base font-semibold mb-2">
+                                  HDL SERIES
+                                </h4>
+                                <Link
+                                  to="/products/hdl300"
+                                  className="block hover:underline space-y-1"
+                                >
                                   <div className="w-36">
-                                    <img src={pro2} alt="HDL300" className="w-full h-auto rounded" />
+                                    <img
+                                      src={pro2}
+                                      alt="HDL300"
+                                      className="w-full h-auto rounded"
+                                    />
                                   </div>
-                                  <p className="font-bold text-sm">Slim Board</p>
-                                  <p className="text-xs text-gray-600">Audio for large rooms</p>
+                                  <p className="font-bold text-sm">
+                                    Slim Board
+                                  </p>
+                                  <p className="text-xs text-gray-600">
+                                    Audio for large rooms
+                                  </p>
                                 </Link>
-                                <Link to="/products/hdl200" className="block hover:underline space-y-1">
+                                <Link
+                                  to="/products/hdl200"
+                                  className="block hover:underline space-y-1"
+                                >
                                   <div className="w-24">
-                                    <img src={pro3} alt="HDL200" className="w-full h-auto rounded" />
+                                    <img
+                                      src={pro3}
+                                      alt="HDL200"
+                                      className="w-full h-auto rounded"
+                                    />
                                   </div>
-                                  <p className="font-bold text-sm">Impression- Series</p>
-                                  <p className="text-xs text-gray-600">Audio for medium-sized rooms</p>
+                                  <p className="font-bold text-sm">
+                                    Impression- Series
+                                  </p>
+                                  <p className="text-xs text-gray-600">
+                                    Audio for medium-sized rooms
+                                  </p>
                                 </Link>
                               </div>
 
                               <div className="space-y-5">
-                                <h4 className="text-base font-semibold mb-2">TECHNOLOGY</h4>
+                                <h4 className="text-base font-semibold mb-2">
+                                  TECHNOLOGY
+                                </h4>
                                 <div className="space-y-1">
-                                  <p className="font-bold text-sm">Display panel technology</p>
+                                  <p className="font-bold text-sm">
+                                    Interactive Panal
+                                  </p>
                                   <p className="text-xs text-gray-600">
-                                    Xtreme Media's LED Video walls deliver high-quality imagery...
+                                    Xtreme Media's LED Video walls deliver
+                                    high-quality imagery...
                                   </p>
                                 </div>
                                 <div className="space-y-1">
-                                  <p className="font-bold text-sm">Explore our advantages</p>
+                                  <p className="font-bold text-sm">
+                                    Conferencing solutions
+                                  </p>
+                                  <p className="text-xs text-gray-600">
+                                    Xtreme Media's LED Video walls deliver
+                                    high-quality imagery...
+                                  </p>
+                                </div>
+                                <div className="space-y-1">
+                                  <p className="font-bold text-sm">
+                                    Digital volume
+                                  </p>
+                                  <p className="text-xs text-gray-600">
+                                    Xtreme Media's LED Video walls deliver
+                                    high-quality imagery...
+                                  </p>
+                                </div>
+                                <div className="space-y-1">
+                                  <p className="font-bold text-sm">
+                                    Active Led
+                                  </p>
                                   <p className="text-xs text-gray-600">
                                     Great Display made simple and affordable.
                                   </p>
@@ -127,43 +205,77 @@ export default function Navbar() {
                               </div>
 
                               <div className="space-y-5">
-                                <Link to="/products/hdx" className="block hover:underline space-y-1">
-                                  <img src={side} alt="HDX" className="h-44 w-auto rounded" />
-                                  <p className="font-bold text-sm">HDX series</p>
+                                <Link
+                                  to="/products/hdx"
+                                  className="block hover:underline space-y-1"
+                                >
+                                  <img
+                                    src={side}
+                                    alt="HDX"
+                                    className="h-44 w-auto rounded"
+                                  />
+                                  <p className="font-bold text-sm">
+                                    HDX series
+                                  </p>
                                   <p className="text-xs text-gray-600">
-                                    Advanced audio for large spaces. Coming in 2026.
+                                    Advanced audio for large spaces. Coming in
+                                    2026.
                                   </p>
                                 </Link>
                               </div>
                             </>
                           )}
 
-                          {/* Solutions */}
                           {item.dropdown.type === "solutions" && (
                             <div>
-                              <h4 className="text-sm font-semibold mb-4">Solutions</h4>
-                              <Link to="/solutions/education" className="block hover:underline mb-2">
+                              <h4 className="text-sm font-semibold mb-4">
+                                Solutions
+                              </h4>
+                              <Link
+                                to="/solutions/education"
+                                className="block hover:underline mb-2"
+                              >
                                 <p className="font-bold text-sm">Education</p>
-                                <p className="text-xs text-gray-600">Classroom & hybrid learning</p>
+                                <p className="text-xs text-gray-600">
+                                  Classroom & hybrid learning
+                                </p>
                               </Link>
-                              <Link to="/solutions/corporate" className="block hover:underline">
+                              <Link
+                                to="/solutions/corporate"
+                                className="block hover:underline"
+                              >
                                 <p className="font-bold text-sm">Corporate</p>
-                                <p className="text-xs text-gray-600">Collaboration spaces</p>
+                                <p className="text-xs text-gray-600">
+                                  Collaboration spaces
+                                </p>
                               </Link>
                             </div>
                           )}
 
-                          {/* Resources */}
                           {item.dropdown.type === "resources" && (
                             <div>
-                              <h4 className="text-sm font-semibold mb-4">Resources</h4>
-                              <Link to="/resources/blogs" className="block hover:underline mb-2">
+                              <h4 className="text-sm font-semibold mb-4">
+                                Resources
+                              </h4>
+                              <Link
+                                to="/resources/blogs"
+                                className="block hover:underline mb-2"
+                              >
                                 <p className="font-bold text-sm">Blogs</p>
-                                <p className="text-xs text-gray-600">Latest industry insights</p>
+                                <p className="text-xs text-gray-600">
+                                  Latest industry insights
+                                </p>
                               </Link>
-                              <Link to="/resources/case-studies" className="block hover:underline">
-                                <p className="font-bold text-sm">Case Studies</p>
-                                <p className="text-xs text-gray-600">Success stories</p>
+                              <Link
+                                to="/resources/case-studies"
+                                className="block hover:underline"
+                              >
+                                <p className="font-bold text-sm">
+                                  Case Studies
+                                </p>
+                                <p className="text-xs text-gray-600">
+                                  Success stories
+                                </p>
                               </Link>
                             </div>
                           )}
@@ -172,7 +284,10 @@ export default function Navbar() {
                     )}
                   </>
                 ) : (
-                  <Link to={item.link} className="hover:text-gray-500 py-2 block">
+                  <Link
+                    to={item.link}
+                    className="hover:text-gray-500 py-2 block"
+                  >
                     {item.name}
                   </Link>
                 )}
@@ -190,13 +305,16 @@ export default function Navbar() {
             Book a Demo
           </Link>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="text-black focus:outline-none md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-black focus:outline-none md:hidden"
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (no change needed for now) */}
       {isOpen && (
         <div className="md:hidden bg-[#f8f8f8] shadow-md px-6 py-4 space-y-3">
           {navItems.map((item, index) => (
@@ -221,23 +339,43 @@ export default function Navbar() {
                       {item.dropdown.type === "product" && (
                         <>
                           <Link to="/products/hdl410" className="block">
-                            <img src={pro} alt="HDL410" className="h-8 w-28 rounded" />
+                            <img
+                              src={pro}
+                              alt="HDL410"
+                              className="h-8 w-28 rounded"
+                            />
                             Digital Signage
                           </Link>
                           <Link to="/products/hdl310" className="block">
-                            <img src={pro1} alt="HDL310" className="h-8 w-28 rounded" />
+                            <img
+                              src={pro1}
+                              alt="HDL310"
+                              className="h-8 w-28 rounded"
+                            />
                             Digital Standee
                           </Link>
                           <Link to="/products/hdl300" className="block">
-                            <img src={pro2} alt="HDL300" className="h-8 w-28 rounded" />
+                            <img
+                              src={pro2}
+                              alt="HDL300"
+                              className="h-8 w-28 rounded"
+                            />
                             Slim Board
                           </Link>
                           <Link to="/products/hdl200" className="block">
-                            <img src={pro3} alt="HDL200" className="h-8 w-28 rounded" />
+                            <img
+                              src={pro3}
+                              alt="HDL200"
+                              className="h-8 w-28 rounded"
+                            />
                             Impression Series
                           </Link>
                           <Link to="/products/hdx" className="block">
-                            <img src={side} alt="HDX" className="h-8 w-28 rounded" />
+                            <img
+                              src={side}
+                              alt="HDX"
+                              className="h-8 w-28 rounded"
+                            />
                             HDX Series
                           </Link>
                         </>

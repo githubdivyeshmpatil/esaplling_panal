@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import product1 from "../assets/images/services1.jpg";
-import product2 from "../assets/images/services2.jpg";
-import product3 from "../assets/images/services3.jpg";
-import product4 from "../assets/images/multi.jpg";
-import product5 from "../assets/images/services5.jpg";
+import product1 from "../assets/images/start.png";
+import product2 from "../assets/images/start1.png";
+import product3 from "../assets/images/start3.png";
+import product4 from "../assets/images/start.png";
+import product5 from "../assets/images/start1.png";
 
 // Product data
 const originalProducts = [
@@ -19,7 +19,7 @@ const clonedStart = originalProducts.slice(-2);
 const clonedEnd = originalProducts.slice(0, 2);
 const products = [...clonedStart, ...originalProducts, ...clonedEnd];
 
-export default function ExploreCarousel() {
+export default function ExploreCarouselProduct() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -32,9 +32,10 @@ export default function ExploreCarousel() {
 
   const getCardWidth = (container) => {
     const width = container.offsetWidth;
-    if (width < 640) return width; // full width on mobile
-    if (width < 1024) return width / 2; // half width on tablet
-    return width / 3; // one-third width on desktop
+    if (width < 640) return width;
+    if (width < 1024) return width / 2;
+    if (width < 1280) return width / 3;
+    return width / 4;
   };
 
   const handleScroll = () => {
@@ -60,7 +61,7 @@ export default function ExploreCarousel() {
   };
 
   return (
-    <div className=" py-12 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
+    <div className="py-12 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 max-w-screen-2xl mx-auto">
       {/* Carousel container */}
       <div
         ref={scrollRef}
@@ -70,28 +71,18 @@ export default function ExploreCarousel() {
         {products.map((item, index) => (
           <div
             key={index}
-            className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2"
+            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 flex-shrink-0 px-2"
           >
-            <div className="group rounded-xl overflow-hidden   bg-white transform transition duration-300  h-full">
-              
-              {/* Image section with sliding overlay */}
-              <div className="relative h-[300px] sm:h-[400px] lg:h-[480px] w-full flex items-center justify-center bg-[#F5F5F5] overflow-hidden">
+            <div className="group rounded-xl overflow-hidden bg-white transform transition duration-300 h-full shadow hover:shadow-lg">
+              {/* Image section */}
                 <img
                   src={item.image}
                   alt={item.name}
                   className="max-w-full max-h-full object-contain relative z-10"
                 />
-                {/* Blue overlay sliding from bottom to top */}
-                <div className="absolute inset-0 bg-[#04428e] opacity-60 z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-              </div>
 
               {/* Text content */}
-              <div className="p-4 text-center">
-<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-1">
-  {item.name}
-</h3>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600">{item.desc}</p>
-              </div>
+              
             </div>
           </div>
         ))}

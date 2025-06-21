@@ -21,7 +21,7 @@ const Soundname = () => {
       {/* Right Side Description */}
       <div className="w-full md:w-1/2 text-gray-800">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-blue-900">
-          Evolve – Generation – II{" "}
+          Evolve – G-2{" "}
           <span className="block text-base font-medium text-gray-600">
             (Camera with live 360 Surround System)
           </span>
