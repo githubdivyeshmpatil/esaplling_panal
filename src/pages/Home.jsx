@@ -13,6 +13,7 @@ import Sound from "../assets/images/sound.png";
 import Soundname from "../components/Soundname";
 import TextImageSection from "../components/TextImageSection";
 import bgImagesound from '../assets/images/sound1.png'
+import side from '../assets/images/side.jpg'
 
 function Home() {
   return (

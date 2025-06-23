@@ -7,6 +7,10 @@ import pro1 from "../assets/images/standee1.png";
 import pro2 from "../assets/images/slim.png";
 import pro3 from "../assets/images/empression_series.png";
 import side from "../assets/images/side.jpg";
+import disp1 from "../assets/images/video_w.png";
+import disp2 from "../assets/images/video_w1.png";
+import disp3 from "../assets/images/video_w2.png";
+import disp4 from "../assets/images/video_w3.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,10 +85,10 @@ export default function Navbar() {
                             <>
                               <div className="space-y-5">
                                 <h4 className="text-base font-semibold mb-2">
-                                  PRO SERIES
+                                  SERIES
                                 </h4>
                                 <Link
-                                  to="/products/hdl410"
+                                  to="/products/digital_signage"
                                   className="block hover:underline space-y-1"
                                 >
                                   <div className="w-14">
@@ -123,7 +127,7 @@ export default function Navbar() {
 
                               <div className="space-y-5">
                                 <h4 className="text-base font-semibold mb-2">
-                                  HDL SERIES
+                                  SERIES
                                 </h4>
                                 <Link
                                   to="/products/hdl300"
@@ -164,63 +168,42 @@ export default function Navbar() {
                               </div>
 
                               <div className="space-y-5">
-                                <h4 className="text-base font-semibold mb-2">
-                                  TECHNOLOGY
-                                </h4>
-                                <div className="space-y-1">
-                                  <p className="font-bold text-sm">
-                                    Interactive Panal
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Xtreme Media's LED Video walls deliver
-                                    high-quality imagery...
-                                  </p>
-                                </div>
-                                <div className="space-y-1">
-                                  <p className="font-bold text-sm">
-                                    Conferencing solutions
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Xtreme Media's LED Video walls deliver
-                                    high-quality imagery...
-                                  </p>
-                                </div>
-                                <div className="space-y-1">
-                                  <p className="font-bold text-sm">
-                                    Digital volume
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Xtreme Media's LED Video walls deliver
-                                    high-quality imagery...
-                                  </p>
-                                </div>
-                                <div className="space-y-1">
-                                  <p className="font-bold text-sm">
-                                    Active Led
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Great Display made simple and affordable.
-                                  </p>
-                                </div>
+                                <h4 className="text-base font-semibold mb-2">DISPLAY</h4>
+                                <Link to="/products/lcd_video_wall" className="block space-y-1 hover:underline">
+                                  <img src={disp1} alt="" className="w-20 h-auto rounded" />
+                                  <p className="font-bold text-sm">LCD Video Wall</p>
+                                </Link>
+                                <Link to="/products/lcd_video_wall_indoor" className="block space-y-1 hover:underline">
+                                  <img src={disp2} alt="" className="w-20 h-auto rounded" />
+                                  <p className="font-bold text-sm">LED Video Wall Indoor</p>
+                                </Link>
+                                <Link to="/products/led_video_wall_outdoor" className="block space-y-1 hover:underline">
+                                  <img src={disp3} alt="" className="w-20 h-auto rounded" />
+                                  <p className="font-bold text-sm">LED Video Wall Outdoor</p>
+                                </Link>
+                                <Link to="/products/led_commercial_display" className="block space-y-1 hover:underline">
+                                  <img src={disp4} alt="" className="w-20 h-auto rounded" />
+                                  <p className="font-bold text-sm">LED Commercial Display</p>
+                                </Link>
                               </div>
 
                               <div className="space-y-5">
-                                <Link
-                                  to="/products/hdx"
-                                  className="block hover:underline space-y-1"
-                                >
-                                  <img
-                                    src={side}
-                                    alt="HDX"
-                                    className="h-44 w-auto rounded"
-                                  />
-                                  <p className="font-bold text-sm">
-                                    HDX series
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Advanced audio for large spaces. Coming in
-                                    2026.
-                                  </p>
+                                <h4 className="text-base font-semibold mb-2">TECHNOLOGY</h4>
+                                <Link to="/products/interactive-panel" className="block space-y-1 hover:underline">
+                                  <p className="font-bold text-sm">Interactive Panel</p>
+                                  <p className="text-xs text-gray-600">Xtreme Media's LED Video walls deliver high-quality imagery...</p>
+                                </Link>
+                                <Link to="/products/conferencing-solutions" className="block space-y-1 hover:underline">
+                                  <p className="font-bold text-sm">Conferencing solutions</p>
+                                  <p className="text-xs text-gray-600">Xtreme Media's LED Video walls deliver high-quality imagery...</p>
+                                </Link>
+                                <Link to="/products/digital-volume" className="block space-y-1 hover:underline">
+                                  <p className="font-bold text-sm">Digital Volume</p>
+                                  <p className="text-xs text-gray-600">Xtreme Media's LED Video walls deliver high-quality imagery...</p>
+                                </Link>
+                                <Link to="/products/active-led" className="block space-y-1 hover:underline">
+                                  <p className="font-bold text-sm">Active Led</p>
+                                  <p className="text-xs text-gray-600">Great Display made simple and affordable.</p>
                                 </Link>
                               </div>
                             </>
