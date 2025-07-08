@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import productBg from "../assets/images/signage.jpg";
 import HeroSection1 from "../components/HeroSection1";
 import AllProducts_data from "./AllProducts_data";
 
 const DigitalSignage = () => {
+    useEffect(() => {
+    window.scrollTo(0, 0); // Page top pe le jaata hai jab component mount hota hai
+  }, []);
   return (
     <div className="text-gray-800">
       {/* Hero Section */}

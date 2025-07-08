@@ -15,7 +15,7 @@ function Lcd_video_wall() {
           <ProductImage />
         </section>
         <ContactSection/>
-         <Footer />
+       
       </div>
   )
 }

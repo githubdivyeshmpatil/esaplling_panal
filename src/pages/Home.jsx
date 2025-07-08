@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "../components/HeroSection";
 import bg2 from "../assets/images/banne.jpg";
 import bg3 from "../assets/images/new_banner.png";
@@ -7,7 +7,6 @@ import Heading from "../components/Heading";
 import ExploreSection from "../components/ExploreSection";
 import ExploreCarousel from "../components/ExploreCarousel";
 import KeyFeaturesSection from "../components/KeyFeaturesSection";
-import Footer from "../components/Footer";
 import TireCarousel from "../components/TireCarousel";
 import Sound from "../assets/images/sound.png";
 import Soundname from "../components/Soundname";
@@ -16,6 +15,9 @@ import bgImagesound from '../assets/images/sound1.png'
 import side from '../assets/images/side.jpg'
 
 function Home() {
+    useEffect(() => {
+    window.scrollTo(0, 0); // Page top pe le jaata hai jab component mount hota hai
+  }, []);
   return (
     <>
       {" "}
@@ -150,7 +152,7 @@ Bring live meeting to the next level{" "}
         </section>
 </section>
         <Soundname />
-        <Footer />
+      
       </div>
     </>
   );

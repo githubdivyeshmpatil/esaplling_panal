@@ -17,7 +17,7 @@ function Led_indoor() {
           <ProductImage />
         </section>
         <ContactSection/>
-         <Footer />
+        
       </div>
   )
 }

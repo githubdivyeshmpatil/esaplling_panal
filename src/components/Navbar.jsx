@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-md p-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-24">
-        {/* Left: Logo and Nav */}
+        {/* Logo */}
         <div className="flex items-center space-x-6">
           <Link to="/" className="flex items-center">
             <img
@@ -75,98 +75,55 @@ export default function Navbar() {
                       )}
                     </Link>
 
+                    {/* Desktop Dropdown */}
                     {activeDropdown === index && (
                       <div
                         onMouseLeave={handleMouseLeave}
                         className="fixed left-0 w-full bg-[#f8f8f8] shadow-lg border-t border-gray-200 mt-8 z-40 transition-all duration-300"
                       >
                         <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-h-[600px] overflow-y-auto">
+                          {/* Product Dropdown */}
                           {item.dropdown.type === "product" && (
                             <>
+                              {/* Series */}
                               <div className="space-y-5">
-                                <h4 className="text-base font-semibold mb-2">
-                                  SERIES
-                                </h4>
-                                <Link
-                                  to="/products/digital_signage"
-                                  className="block hover:underline space-y-1"
-                                >
+                                <h4 className="text-base font-semibold mb-2">SERIES</h4>
+                                <Link to="/products/digital_signage" className="block hover:underline space-y-1">
                                   <div className="w-14">
-                                    <img
-                                      src={pro}
-                                      alt="HDL410"
-                                      className="w-full h-auto rounded"
-                                    />
+                                    <img src={pro} alt="Digital Signage" className="w-full h-auto rounded" />
                                   </div>
-                                  <p className="font-bold text-sm">
-                                    Digital Signage
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Pro AV performance for extra-large rooms
-                                  </p>
+                                  <p className="font-bold text-sm">Digital Signage</p>
+                                  <p className="text-xs text-gray-600">Pro AV performance for extra-large rooms</p>
                                 </Link>
-                                <Link
-                                  to="/products/hdl310"
-                                  className="block hover:underline space-y-1"
-                                >
+                                <Link to="/products/digitalstandi" className="block hover:underline space-y-1">
                                   <div className="w-14">
-                                    <img
-                                      src={pro1}
-                                      alt="HDL310"
-                                      className="w-full h-auto rounded"
-                                    />
+                                    <img src={pro1} alt="Digital Standee" className="w-full h-auto rounded" />
                                   </div>
-                                  <p className="font-bold text-sm">
-                                    Digital Standee
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Pro AV performance for large rooms
-                                  </p>
+                                  <p className="font-bold text-sm">Digital Standee</p>
+                                  <p className="text-xs text-gray-600">Pro AV performance for large rooms</p>
                                 </Link>
                               </div>
 
+                              {/* Series Continued */}
                               <div className="space-y-5">
-                                <h4 className="text-base font-semibold mb-2">
-                                  SERIES
-                                </h4>
-                                <Link
-                                  to="/products/hdl300"
-                                  className="block hover:underline space-y-1"
-                                >
+                                <h4 className="text-base font-semibold mb-2">SERIES</h4>
+                                <Link to="/products/slimboard" className="block hover:underline space-y-1">
                                   <div className="w-36">
-                                    <img
-                                      src={pro2}
-                                      alt="HDL300"
-                                      className="w-full h-auto rounded"
-                                    />
+                                    <img src={pro2} alt="Slim Board" className="w-full h-auto rounded" />
                                   </div>
-                                  <p className="font-bold text-sm">
-                                    Slim Board
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Audio for large rooms
-                                  </p>
+                                  <p className="font-bold text-sm">Slim Board</p>
+                                  <p className="text-xs text-gray-600">Audio for large rooms</p>
                                 </Link>
-                                <Link
-                                  to="/products/hdl200"
-                                  className="block hover:underline space-y-1"
-                                >
+                                <Link to="/products/impression_series" className="block hover:underline space-y-1">
                                   <div className="w-24">
-                                    <img
-                                      src={pro3}
-                                      alt="HDL200"
-                                      className="w-full h-auto rounded"
-                                    />
+                                    <img src={pro3} alt="Impression Series" className="w-full h-auto rounded" />
                                   </div>
-                                  <p className="font-bold text-sm">
-                                    Impression- Series
-                                  </p>
-                                  <p className="text-xs text-gray-600">
-                                    Audio for medium-sized rooms
-                                  </p>
+                                  <p className="font-bold text-sm">Impression Series</p>
+                                  <p className="text-xs text-gray-600">Audio for medium-sized rooms</p>
                                 </Link>
                               </div>
 
+                              {/* Display */}
                               <div className="space-y-5">
                                 <h4 className="text-base font-semibold mb-2">DISPLAY</h4>
                                 <Link to="/products/lcd_video_wall" className="block space-y-1 hover:underline">
@@ -187,78 +144,55 @@ export default function Navbar() {
                                 </Link>
                               </div>
 
+                              {/* Technology */}
                               <div className="space-y-5">
                                 <h4 className="text-base font-semibold mb-2">TECHNOLOGY</h4>
-                                <Link to="/products/interactive-panel" className="block space-y-1 hover:underline">
+                                <Link to="/products/intractive_panal" className="block space-y-1 hover:underline">
                                   <p className="font-bold text-sm">Interactive Panel</p>
-                                  <p className="text-xs text-gray-600">Xtreme Media's LED Video walls deliver high-quality imagery...</p>
+                                  <p className="text-xs text-gray-600">High-quality imagery & intuitive experience</p>
                                 </Link>
-                                <Link to="/products/conferencing-solutions" className="block space-y-1 hover:underline">
-                                  <p className="font-bold text-sm">Conferencing solutions</p>
-                                  <p className="text-xs text-gray-600">Xtreme Media's LED Video walls deliver high-quality imagery...</p>
+                                <Link to="/products/conferencing_solution" className="block space-y-1 hover:underline">
+                                  <p className="font-bold text-sm">Conferencing Solutions</p>
+                                  <p className="text-xs text-gray-600">Flexible solutions for meetings</p>
                                 </Link>
-                                <Link to="/products/digital-volume" className="block space-y-1 hover:underline">
+                                <Link to="/products/digital_volume" className="block space-y-1 hover:underline">
                                   <p className="font-bold text-sm">Digital Volume</p>
-                                  <p className="text-xs text-gray-600">Xtreme Media's LED Video walls deliver high-quality imagery...</p>
+                                  <p className="text-xs text-gray-600">Immersive digital experiences</p>
                                 </Link>
-                                <Link to="/products/active-led" className="block space-y-1 hover:underline">
-                                  <p className="font-bold text-sm">Active Led</p>
-                                  <p className="text-xs text-gray-600">Great Display made simple and affordable.</p>
+                                <Link to="/products/active_led" className="block space-y-1 hover:underline">
+                                  <p className="font-bold text-sm">Active LED</p>
+                                  <p className="text-xs text-gray-600">Great display made simple</p>
                                 </Link>
                               </div>
                             </>
                           )}
 
+                          {/* Solutions */}
                           {item.dropdown.type === "solutions" && (
                             <div>
-                              <h4 className="text-sm font-semibold mb-4">
-                                Solutions
-                              </h4>
-                              <Link
-                                to="/solutions/education"
-                                className="block hover:underline mb-2"
-                              >
+                              <h4 className="text-sm font-semibold mb-4">Solutions</h4>
+                              <Link to="/solutions/education" className="block hover:underline mb-2">
                                 <p className="font-bold text-sm">Education</p>
-                                <p className="text-xs text-gray-600">
-                                  Classroom & hybrid learning
-                                </p>
+                                <p className="text-xs text-gray-600">Classroom & hybrid learning</p>
                               </Link>
-                              <Link
-                                to="/solutions/corporate"
-                                className="block hover:underline"
-                              >
+                              <Link to="/solutions/corporate" className="block hover:underline">
                                 <p className="font-bold text-sm">Corporate</p>
-                                <p className="text-xs text-gray-600">
-                                  Collaboration spaces
-                                </p>
+                                <p className="text-xs text-gray-600">Collaboration spaces</p>
                               </Link>
                             </div>
                           )}
 
+                          {/* Resources */}
                           {item.dropdown.type === "resources" && (
                             <div>
-                              <h4 className="text-sm font-semibold mb-4">
-                                Resources
-                              </h4>
-                              <Link
-                                to="/resources/blogs"
-                                className="block hover:underline mb-2"
-                              >
+                              <h4 className="text-sm font-semibold mb-4">Resources</h4>
+                              <Link to="/resources/blogs" className="block hover:underline mb-2">
                                 <p className="font-bold text-sm">Blogs</p>
-                                <p className="text-xs text-gray-600">
-                                  Latest industry insights
-                                </p>
+                                <p className="text-xs text-gray-600">Latest industry insights</p>
                               </Link>
-                              <Link
-                                to="/resources/case-studies"
-                                className="block hover:underline"
-                              >
-                                <p className="font-bold text-sm">
-                                  Case Studies
-                                </p>
-                                <p className="text-xs text-gray-600">
-                                  Success stories
-                                </p>
+                              <Link to="/resources/case-studies" className="block hover:underline">
+                                <p className="font-bold text-sm">Case Studies</p>
+                                <p className="text-xs text-gray-600">Success stories</p>
                               </Link>
                             </div>
                           )}
@@ -267,10 +201,7 @@ export default function Navbar() {
                     )}
                   </>
                 ) : (
-                  <Link
-                    to={item.link}
-                    className="hover:text-gray-500 py-2 block"
-                  >
+                  <Link to={item.link} className="hover:text-gray-500 py-2 block">
                     {item.name}
                   </Link>
                 )}
@@ -279,7 +210,7 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Right: Book Demo & Hamburger */}
+        {/* Right: CTA & Mobile Menu Toggle */}
         <div className="flex items-center space-x-3">
           <Link
             to="/book-demo"
@@ -287,17 +218,13 @@ export default function Navbar() {
           >
             Book a Demo
           </Link>
-
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-black focus:outline-none md:hidden"
-          >
+          <button onClick={() => setIsOpen(!isOpen)} className="text-black focus:outline-none md:hidden">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu (no change needed for now) */}
+      {/* ✅ Mobile Menu with Product → Series, Display, Technology (Text Only) */}
       {isOpen && (
         <div className="md:hidden bg-[#f8f8f8] shadow-md px-6 py-4 space-y-3">
           {navItems.map((item, index) => (
@@ -311,76 +238,43 @@ export default function Navbar() {
                     }
                   >
                     {item.name}
-                    {mobileDropdown === index ? (
-                      <ChevronUp size={16} />
-                    ) : (
-                      <ChevronDown size={16} />
-                    )}
+                    {mobileDropdown === index ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                   </button>
                   {mobileDropdown === index && (
                     <div className="ml-4 mt-2 space-y-3 text-sm text-gray-700 pb-2">
                       {item.dropdown.type === "product" && (
                         <>
-                          <Link to="/products/hdl410" className="block">
-                            <img
-                              src={pro}
-                              alt="HDL410"
-                              className="h-8 w-28 rounded"
-                            />
-                            Digital Signage
-                          </Link>
-                          <Link to="/products/hdl310" className="block">
-                            <img
-                              src={pro1}
-                              alt="HDL310"
-                              className="h-8 w-28 rounded"
-                            />
-                            Digital Standee
-                          </Link>
-                          <Link to="/products/hdl300" className="block">
-                            <img
-                              src={pro2}
-                              alt="HDL300"
-                              className="h-8 w-28 rounded"
-                            />
-                            Slim Board
-                          </Link>
-                          <Link to="/products/hdl200" className="block">
-                            <img
-                              src={pro3}
-                              alt="HDL200"
-                              className="h-8 w-28 rounded"
-                            />
-                            Impression Series
-                          </Link>
-                          <Link to="/products/hdx" className="block">
-                            <img
-                              src={side}
-                              alt="HDX"
-                              className="h-8 w-28 rounded"
-                            />
-                            HDX Series
-                          </Link>
+                          <p className="font-semibold text-gray-900">Series</p>
+                          <Link to="/products/digital_signage" className="block">Digital Signage</Link>
+                          <Link to="/products/digitalstandi" className="block">Digital Standee</Link>
+                          <Link to="/products/slimboard" className="block">Slim Board</Link>
+                          <Link to="/products/impression_series" className="block">Impression Series</Link>
+
+                          <p className="mt-3 font-semibold text-gray-900">Display</p>
+                          <Link to="/products/lcd_video_wall" className="block">LCD Video Wall</Link>
+                          <Link to="/products/lcd_video_wall_indoor" className="block">LED Video Wall Indoor</Link>
+                          <Link to="/products/led_video_wall_outdoor" className="block">LED Video Wall Outdoor</Link>
+                          <Link to="/products/led_commercial_display" className="block">LED Commercial Display</Link>
+
+                          <p className="mt-3 font-semibold text-gray-900">Technology</p>
+                          <Link to="/products/interactive-panel" className="block">Interactive Panel</Link>
+                          <Link to="/products/conferencing-solutions" className="block">Conferencing Solutions</Link>
+                          <Link to="/products/digital-volume" className="block">Digital Volume</Link>
+                          <Link to="/products/active-led" className="block">Active LED</Link>
                         </>
                       )}
+
                       {item.dropdown.type === "solutions" && (
                         <>
-                          <Link to="/solutions/education" className="block">
-                            Education
-                          </Link>
-                          <Link to="/solutions/corporate" className="block">
-                            Corporate
-                          </Link>
+                          <Link to="/solutions/education" className="block">Education</Link>
+                          <Link to="/solutions/corporate" className="block">Corporate</Link>
                         </>
                       )}
+
                       {item.dropdown.type === "resources" && (
                         <>
-                          <Link to="/resources/blogs" className="block">
-                            Blogs
-                          </Link>
-                          <Link to="/resources/case-studies" className="block">
-                            Case Studies
-                          </Link>
+                          <Link to="/resources/blogs" className="block">Blogs</Link>
+                          <Link to="/resources/case-studies" className="block">Case Studies</Link>
                         </>
                       )}
                     </div>

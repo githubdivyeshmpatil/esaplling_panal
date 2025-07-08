@@ -9,6 +9,14 @@ import Led_indoor from "./components/Led_indoor";
 import Led_outdoor from "./components/Led_outdoor";
 import Led_Commercial from "./components/Led_Commercial";
 import Signage from "./pages/Signage";
+import SlimBoard from "./pages/SlimBoard";
+import DigitalStandi from "./pages/DigitalStandi";
+import Footer from "./components/Footer";
+import Impewssionseries from "./pages/Impewssionseries";
+import Intractive_Panal from "./pages/Intractive_Panal";
+import Conferencing_solution from "./pages/Conferencing_solution";
+import Didital_volume from "./pages/Didital_volume";
+import Active_led from "./pages/Active_led";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,7 +44,36 @@ function App() {
           path="/products/digital_signage"
           element={<Signage />}
         />
+          <Route
+          path="/products/slimboard"
+          element={<SlimBoard />}
+        />
+        <Route
+          path="/products/digitalstandi"
+          element={<DigitalStandi />}
+        />
+         <Route
+          path="/products/impression_series"
+          element={<Impewssionseries />}
+        />
+         <Route
+          path="/products/intractive_panal"
+          element={<Intractive_Panal />}
+        />
+         <Route
+          path="/products/conferencing_solution"
+          element={<Conferencing_solution />}
+        />
+          <Route
+          path="/products/digital_volume"
+          element={<Didital_volume/>}
+        />
+         <Route
+          path="/products/active_led"
+          element={<Active_led/>}
+        />
       </Routes>
+        <Footer />
     </Router>
   );
 }

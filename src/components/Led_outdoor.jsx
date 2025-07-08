@@ -15,7 +15,7 @@ function Led_outdoor() {
           <ProductImage />
         </section>
         <ContactSection/>
-         <Footer />
+      
       </div>
   )
 }

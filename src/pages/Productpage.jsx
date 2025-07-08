@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductBg from '../components/ProductBg'
 import ProductImage from '../components/ProductImage'
 import PropsHeading from '../components/PropsHeading'
 import ExploreCarouselProduct from '../components/ExploreCarouselProduct'
 import ConfidenceSection from '../components/ConfidenceSection'
 import FooterBanner from '../components/FooterBanner'
-import Footer from '../components/Footer'
 
 function Productpage() {
+    useEffect(() => {
+    window.scrollTo(0, 0); // Page top pe le jaata hai jab component mount hota hai
+  }, []);
   return (
     <>
       {/* Hero Section */}
@@ -39,7 +41,7 @@ function Productpage() {
       </div>
 
       {/* Footer */}
-      <Footer />
+    
     </>
   );
 }

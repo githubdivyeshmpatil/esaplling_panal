@@ -15,7 +15,7 @@ function Led_Commercial() {
           <ProductImage />
         </section>
         <ContactSection/>
-         <Footer />
+    
       </div>
   )
 }
